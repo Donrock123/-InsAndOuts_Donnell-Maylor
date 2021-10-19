@@ -43,12 +43,10 @@ void draw() {
 background(r, g, b);
 
 if (mouseX>width/2) {
-    fill(r1, g1, b1);
     drawBlackCircle();
   
 }
 else if (mouseY> height/2) { 
-    fill(r2, g2, b2);
     drawWhiteCircle();
     
   }
