@@ -10,6 +10,10 @@ int sensor2val = 0;
 int sensor3val = 0;
 int threshold = 90;
 
+float r;
+float g;
+float b;
+
 void setup() {
   size(400, 400);
   
@@ -17,6 +21,8 @@ void setup() {
   String portName = Serial.list()[0]; 
   myPort = new Serial(this, portName, 9600);
 }
+
+
 
 void draw() {
  if ( myPort.available() > 0) { 
@@ -33,6 +39,11 @@ void draw() {
  if (portVal > 86 && portVal <= 99){
     sensor3val = portVal; 
  }
+ if (sensor3val == 91) {
+   r = random(255);
+   g = random(255);
+   b = random(255);
+ } 
  
  sensor2val = int( map(sensor2val, 100, 255, 100, 255));
  
@@ -43,7 +54,7 @@ void draw() {
   ellipse(150, 150, 40, 40);
   ellipse(250, 150, 40, 40);
   rect(150, 250, 100, 20);
-  
+  fill(r, g, b);
   triangle(170, 220, 200, 180, 230, 220);
   
   

@@ -1,7 +1,7 @@
 const int SENSOR1 = A0;
 const int SENSOR2 = A1;
 const int SENSOR3 = A2;
-const int threshold = 90;
+const int threshold = 2;
 
 int sensor1val = 0;    
 int sensor2val = 0;
@@ -29,13 +29,15 @@ void loop() {
   
   sensor3val = analogRead(SENSOR3);
   //sensor2val = sensor2val / 4;
-  sensor3val = map(sensor3val,0, 1023, 86, 99);  
+  //sensor3val = map(sensor3val,0, 1023, 86, 99);  
   delay(100);
  
   
-  sensorReading = analogRead(SENSOR3); 
-  if (SENSOR3 >= threshold) {
-    
+  //sensorReading = analogRead(SENSOR3); 
+  if (sensor3val >= threshold) {
+    sensor3val = 91;     
+  } else { 
+    sensor3val = 90; 
   }
   
   
