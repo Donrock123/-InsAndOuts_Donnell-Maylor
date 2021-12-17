@@ -1,5 +1,6 @@
 //Donnell Maylor
-//Final_WIP
+//Final_Project
+//Changing face
 
 import processing.serial.*; 
 
